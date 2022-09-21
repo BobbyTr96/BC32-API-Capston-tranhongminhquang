@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- link Css -->
+    <link rel="stylesheet" href="./index.css">
+</head>
+
+<body>
+    <div class="banner">
+        <section id="head">
+            <div id="chooseProduct">
+                <select id="phone">
+                    <option value="all">All</option>
+                    <option value="samsung">Samsung</option>
+                    <option value="iphone">Iphone</option>
+                </select>
+            </div>
+            <div class="icon">
+                <button id="cart"><i class="fa-solid fa-cart-plus"></i></button>
+            </div>
+            <span id="num">0</span>
+            
+        </section>
+        <section id="products">
+            <div class="inner">
+                <div class="container">
+                    <div class="cart-content">
+                    </div>
+    
+                </div>
+            </div>
+          
+        </section>
+        
+        
+          <!-- giỏ hàng -->
+          <div class="cart-product">
+            <div class="cart-header">
+                <h2>Item</h2>
+                <button id="closed-cart">
+                    <i class="fa-regular fa-circle-xmark"></i>
+                </button>
+            </div>
+            <table>
+                <tbody class="cart-items"> </tbody>
+            </table>
+    
+            <div class="cart-footer">
+                <div class="footer-text">
+                   
+                </div>
+                <div class="footer-btn">
+                    <button class="btn" onclick="purchase()">
+                        <i  class="fa-regular fa-credit-card"></i>
+                        <span>Purchase</span>
+                    </button>
+                    <button class="btn" onclick="DeleteAll()">
+                        <i class="fa-solid fa-trash-can"></i>
+                        <span>Clear</span>
+                    </button>
+                    
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <div class="cover-cart">
+    
+    </div>
+    
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <!-- Axios -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!-- main Js -->
+    <script src="./productObject.js"></script>
+    <script src="./productAPI.js"></script>
+
+    <script src="./main.js"></script>
+</body>
+
+</html>

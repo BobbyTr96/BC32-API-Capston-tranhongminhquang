@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <header class="display-4 my-4">
+            <h1>Admin
+            </h1>
+        </header>
+        <!-- Phan tab menu -->
+        <ul class="nav nav-tabs" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" href="#DanhSachSP" role="tab" data-toggle="tab">Danh sách sản phẩm</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#DanhSachNguoiDung" role="tab" data-toggle="tab">Danh sách người dùng</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#ThongKe" role="tab" data-toggle="tab">Thống kê</a>
+            </li>
+        </ul>
+        <br />
+        <!-- Tab panes -->
+        <div class="tab-content">
+            <!--Danh sách người dùng -->
+            <div role="tabpanel" class="tab-pane  in active" id="DanhSachSP">
+                <div class="row">
+                    <div class="col-md-8">
+                        <!-- BEGIN BUTTOM THÊM MỚI -->
+                        <button id="btnThemSP" class="btn btn-success" data-toggle="modal" data-target="#myModal">
+                            <i class="fa fa-plus mr-1"></i>
+                            Thêm Mới
+                        </button>
+                        <!-- END BUTTON THÊM MỚI -->
+                    </div>
+                    <div class="col-md-4">
+                        <!-- BEGIN TÌM KIẾM -->
+                        <div class="input-group mb-3">
+                            <input id="inputTK" type="text" class="form-control" placeholder="Nhập từ khóa"
+                                aria-label="Recipient's username" aria-describedby="basic-addon2" />
+                            <div class="input-group-append">
+                                <span class="input-group-text" id="basic-addon2"><i class="fa fa-search"></i></span>
+                            </div>
+                        </div>
+                        <!-- END TÌM KIẾM -->
+                    </div>
+                </div>
+                <div class="clear-fix"></div>
+                <div class="tblSanPham" id="tblSanPham">
+                    <!-- BEGIN TABLE NGƯỜI DÙNG -->
+                    <table class="table table-bordered">
+                        <thead>
+                            <th>STT</th>
+                            <th>Tên Sản Phẩm</th>
+                            <th>Giá</th>
+                            <th>Hình Ảnh</th>
+                            <th>Mô Tả</th>
+                            <th>Action</th>
+                        </thead>
+                        <tbody id="tblDanhSachSP"></tbody>
+                    </table>
+                    <!-- END TABLE NGƯỜI DÙNG -->
+                </div>
+                <br />
+            </div>
+            <!-- Kết thúc danh sách người dùng -->
+            <!-- Danh sách khóa học -->
+            <div role="tabpanel" class="tab-pane fade" id="DanhSachNguoiDung">
+                <span>Đang cập nhật...</span>
+            </div>
+            <!-- Kết thúc danh sách khóa học -->
+            <!-- Thống kê -->
+            <div role="tabpanel" class="tab-pane fade" id="ThongKe">
+                <span>Đang cập nhật...</span>
+            </div>
+            <!-- Kết thúc thống kê -->
+        </div>
+
+        <!--KetThuc Tabmenu-->
+
+        <!-- The Modal -->
+        <div class="modal fade" id="myModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title">Thêm mẫu điện thoại</h4>
+                        <button type="button" class="close" data-dismiss="modal">
+                            &times;
+                        </button>
+                    </div>
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label>Tên Sản Phẩm</label>
+                            <input id="TenSP" class="form-control" placeholder="Nhập vào tên sản phẩm" />
+                            <span id="checkName" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Giá</label>
+                            <input id="GiaSP" class="form-control" placeholder="Nhập vào giá" />
+                            <span id="checkPrice" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label>Screen</label>
+                            <input id="screen" class="form-control" placeholder="Nhập chỉ số màn hình" />
+                            <span id="checkScreen" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label>Back Camera</label>
+                            <input id="backCamera" class="form-control" placeholder="Nhập chỉ số cam chính" />
+                            <span id="checkBackCamera" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label>Front Camera</label>
+                            <input id="frontCamera" class="form-control" placeholder="Nhập chỉ số cam phụ" />
+                            <span id="checkFrontCamera" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label>Hình Ảnh</label>
+                            <input id="HinhSP" class="form-control" placeholder="Nhập vào hình sản phẩm" />
+                            <span id="checkImage" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label>Type</label>
+                            <input id="type" class="form-control" placeholder="Nhập thương hiệu" />
+                            <span id="checkType" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label>Mô tả</label>
+                            <textarea class="form-control" name="" id="MoTa" cols="30" rows="10"
+                                placeholder="Nhập vào mô tả"></textarea>
+                            <span id="checkDesc" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="container"></div>
+    <style>
+        #container {
+            min-width: 310px;
+            max-width: 800px;
+            height: 400px;
+            margin: 0 auto;
+        }
+    </style>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <!-- Axios -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!-- main JS -->
+    <script src="./admin-productAPI.js"></script>
+    <script src="./admin.js"></script>
+</body>
+
+</html>
